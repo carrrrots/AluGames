@@ -1,4 +1,4 @@
-<%= simple_form_for [@game] do |f| %>
+<%= simple_form_for [ @game ] do |f| %>
   <%= f.input :name %>
   <%= f.input :category, :collection => %w[Euro Party Legacy Campaign] %>
   <%= f.input :price %>

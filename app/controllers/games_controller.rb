@@ -1,15 +1,16 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: %i[show delete]
+  before_action :set_game, only: [:show, :edit, :update, :destroy]
+
   def index
-    @games = Games.all
+    @games = Game.all
   end
 
   def show
-    @game = Game.find(game_params)
+    @game = Game.find(params[:id])
   end
 
   def new
-    @Game = Game.new
+    @game = Game.new
   end
 
   def create
@@ -23,13 +24,26 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @restaurant.destroy
+    @game.destroy
+     redirect_to games_path
   end
+
+   def edit;  end
+
+
+    def update
+    if @game.update(game_params)
+      redirect_to @game, notice: 'Game was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
 
   private
 
   def game_params
-    params.require(:game).permit(:name, :category, :price, :number_of_players, :description, :available)
+    params.require(:game).permit(:name, :category, :price, :number_of_players, :description)
   end
 
   def set_game
