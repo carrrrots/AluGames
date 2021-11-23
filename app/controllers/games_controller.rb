@@ -1,36 +1,38 @@
 class GamesController < ApplicationController
-before_action :set_game, only: %i[show delete]
+  before_action :set_game, only: %i[show delete]
+  def index
+    @games = Games.all
+  end
 
-def new
-  @game = Game.new
-end
+  def show
+    @game = Game.find(game_params)
+  end
 
-def create
-  @game = Game.new(game_params)
-  @game.user = current_user
-   if @game.save
+  def new
+    @Game = Game.new
+  end
+
+  def create
+    @game = Game.new(game_params)
+    @game.user = current_user
+    if @game.save
       redirect_to game_path(@game)
     else
       render :new
     end
+  end
 
-end
+  def destroy
+    @restaurant.destroy
+  end
 
-def show; end
-
-def index
-  @games = Game.all
-end
-
-private
+  private
 
   def game_params
-    params.require(:game).permit(:name, :category, :price, :number_of_players, :description)
+    params.require(:game).permit(:name, :category, :price, :number_of_players, :description, :available)
   end
 
   def set_game
-    @game = Game.find(params[:game_id])
+    @game = Game.find(params[:id])
   end
-
-
 end
