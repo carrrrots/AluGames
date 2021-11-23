@@ -1,0 +1,8 @@
+<%= simple_form_for [@game] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, :collection => %w[Euro Party Legacy Campaign] %>
+  <%= f.input :price %>
+  <%= f.input :number_of_players %>
+  <%= f.input :description %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
