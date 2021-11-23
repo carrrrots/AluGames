@@ -4,9 +4,9 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :category
       t.integer :price
-      t.integer :number_of_players
+      t.string :number_of_players
       t.text :description
-      t.boolean :available
+      t.boolean :available, default: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

@@ -1,36 +1,27 @@
 class RentsController < ApplicationController
-  before_action :set_rent, only: [:show, :destroy]
+  # before_action :set_rent, only: [:show, :destroy]
 
-  def show
-    @rent = Rent.find(params[:id])
-  end
-
-  def new
+   def new
+    @game = Game.find(params[:game_id])
     @rent = Rent.new
   end
 
   def create
+    @game = Game.find(params[:game_id])
+    @game.update(available: false)
     @rent = Rent.new(rent_params)
+    @rent.game = @game
     @rent.user = current_user
     if @rent.save
-      redirect_to rent_path(@rent)
+      redirect_to game_path(@game), notice: "Game rented!"
     else
-      render :new
+      redirect_to game_path(@game), notice: "Couldn't rent this game"
     end
   end
 
-  def destroy
-    @rent.destroy
-     redirect_to rents_path
-  end
-
-   private
+  private
 
   def rent_params
-    params.require(:rent).permit(:period_of_time)
-  end
-
-  def set_rent
-    @rent = Rent.find(params[:id])
+    params.require(:rent).permit(:start_date, :end_date)
   end
 end
