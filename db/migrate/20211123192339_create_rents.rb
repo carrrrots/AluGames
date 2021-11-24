@@ -1,7 +1,8 @@
 class CreateRents < ActiveRecord::Migration[6.1]
   def change
     create_table :rents do |t|
-      t.date :period_of_time
+      t.date :start_date
+      t.date :end_date
       t.references :user, null: false, foreign_key: true
       t.references :game, null: false, foreign_key: true
 

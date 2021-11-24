@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_192339) do
     t.string "name"
     t.string "category"
     t.integer "price"
-    t.integer "number_of_players"
+    t.string "number_of_players"
     t.text "description"
     t.boolean "available", default: true
     t.bigint "user_id", null: false
@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 2021_11_23_192339) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.date "period_of_time"
+    t.date "start_date"
+    t.date "end_date"
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
