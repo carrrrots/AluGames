@@ -1,22 +1,37 @@
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+<div class="show-container-box d-flex">
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+  <div class="row no-gutters">
+    <div class="col-md-4 ">
+      <%if @game.photo.present? %>
+      <%= cl_image_tag @game.photo.key, class: "card-img-top default-img-show", crop: :fill %>
+      <% else %>
+      <%= image_tag 'game.jpg', class: "card-img-top default-img-show"%>
+      <% end%>
+    </div>
+    <div class=" card col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
 
-<p>
-  <strong>Available:</strong>
-  <%= @game.available ? 'yes' : 'no' %>
-</p>
+</div>
+</div>
+<div class="container show-container">
 
-<%= link_to 'Edit', edit_game_path(@game) %>
-<%= link_to 'Back', games_path %>
-
-<td><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <div class="infos">
+      <div class="description">
+        <p class="text-break">
+          <strong>Description:</strong>
+          <%= @game.description %>
+        </p>
+      </div>
+      <div class="price">
+        <p><strong>Price:</strong> R$ <%=@game.price%>.00</p>
+      </div>
+    </div>
+</div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -46,3 +61,22 @@
     </div>
   </div>
 </div>
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @game.available ? 'yes' : 'no' %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %>
+<%= link_to 'Back', games_path %>
+
+<td><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

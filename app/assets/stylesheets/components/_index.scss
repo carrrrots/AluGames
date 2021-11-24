@@ -2,22 +2,74 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "searchbar";
+@import "_cards";
+@import "carousel";
+@import "showgames";
 
-.card-container {
+body {
+  background-color: #F1FAEE;
+}
+
+.card-container1 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-top: 2px;
+}
+
+.banner h1 {
+  // margin: 0;
+  color: white;
+  opacity: .8;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
 .link-btn {
   text-decoration: none !important;
-  color: white;
-
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: $font-default;
+    &:hover {
+      color: rgb(255, 255, 255);
+      text-decoration: none !important;
+    }
 }
+
 .default-img {
   width: 100%;
   height: 13vw;
   object-fit: cover;
   padding: 0.1rem;
+}
+
+.index-navbar {
+  margin-top: 7rem;
+}
+
+.btn-show {
+  background: #A8DADC;
+  margin-bottom: -0.2rem;
+  &:hover{
+    background: #E63946;
+  }
 }

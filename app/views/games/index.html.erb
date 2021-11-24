@@ -2,7 +2,7 @@
   <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light index-navbar shadow">
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
 		</div>
 	</div>
 </div>
-<div class="card-container">
+<div class="card-container1">
 <% @games.each do |game| %>
 <div class="card m-4" style="width: 18rem; height:30%">
   <%if game.photo.present? %>
@@ -64,7 +64,7 @@
     <p class="card-price">R$<%= game.price %>,00</p>
     <p class="card-players">Jogadores: <%= game.number_of_players %></p>
     </div>
-    <p class="btn btn-primary d-flex justify-content-center mx-4 rounded"><%= link_to 'Show', game, class: "link-btn" %></p>
+    <p class="btn d-flex justify-content-center mx-5 mt-2 rounded-pill btn-show"><%= link_to 'Show', game, class: "link-btn" %></p>
   </div>
 </div>
 <% end %>

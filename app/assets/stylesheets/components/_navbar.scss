@@ -1,6 +1,20 @@
+$font-default: 'Roboto Mono',
+monospace;
+
+.navbar-container {
+  display: flex;
+}
+
+#name {
+  color: white;
+  margin-top: 0.6rem;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #0f1722f6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  height: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +22,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 3rem;
+}
+
+.login {
+  background: #E63946;
+  color: white;
+  font-family: $font-default;
+}
+
+.nav-link-btn {
+color: white !important;
 }
