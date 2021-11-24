@@ -1,2 +1,58 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AluGames | Rent to play!</title>
+    <meta name="description" content="Planning to play boardgames with your
+      friends this week? At AluGames you can rent a game very easily">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  </head>
+  <body>
+
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1606503153255-59d8b8b82176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <div class="container">
+        <h1>Rent board games with <strong>AluGames</strong>!</h1>
+        <p>Planning to play boardgames with your friends this week? At AluGames you can rent a game very easily.</p>
+        <%= simple_form_for :search, url: root_path, method: :get, html: {class: "d-flex justify-content-center"} do |f| %>
+    <div class="search-bar-container">
+      <div class="search-form-control form-group">  <!--DIMINUIR SEARCH BAR!!!!!!!!-->
+        <input class="_input-search form-control form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="_btn-search btn btn-sm btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </div>
+    <% end %>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://cf.geekdo-images.com/u1l0gH7sb_vnvDvoO_QHqA__opengraph/img/6Hm6YzvXL_xnLP2r_fu0wCckHKQ=/fit-in/1200x630/filters:strip_icc()/pic4887376.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Coup</h5>
+          <p class="card-text">Em Great Western Trail, vocês são vaqueiros rivais nos EUA do século 19...</p>
+          <a href="#" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://cf.geekdo-images.com/tz19PfklMdAdjxV9WArraA__opengraph/img/g1d7Q4rgkWOeGq8eQdmeV1xl7TU=/fit-in/1200x630/filters:strip_icc()/pic3718275.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Introduzidos pelos mouros, os azulejos foram completamente aceitos...</p>
+          <a href="#" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__opengraph/img/d5aVUcak3R6QOHz5y-fvQdc8pwU=/fit-in/1200x630/filters:strip_icc()/pic4458123.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Vocês são entusiastas de pássaros - pesquisadores, observadores de pássaros...</p>
+          <a href="#" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
