@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: %i[show edit update destroy]
 
   def index
     @games = Game.all
@@ -29,10 +29,10 @@ class GamesController < ApplicationController
      redirect_to games_path
   end
 
-   def edit;  end
+  def edit;  end
 
 
-    def update
+  def update
     if @game.update(game_params)
       redirect_to @game, notice: 'Game was successfully updated.'
     else
@@ -44,7 +44,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :category, :price, :number_of_players, :description)
+    params.require(:game).permit(:name, :category, :price, :number_of_players, :description, :photo)
   end
 
   def set_game
