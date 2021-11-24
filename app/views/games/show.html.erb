@@ -1,12 +1,23 @@
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://movimentorpg.com.br/wp-content/uploads/2021/01/Cartas-Coup-768x205.jpg)">
+  <div class="card-product">
+    <h2><%= @game.name.upcase %></h2>
+    <ul class="list-inline">
+      <li class="list-inline-item">Category: <%= @game.category %> </li>
+      <li class="list-inline-item"><%= @game.number_of_players%> players </li>
+    </ul>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+  <div class="description">
+    <div>
+      <p class="text-break">
+        <strong>Description:</strong>
+        <%= @game.description %>
+        <%= @game.description %>
+        <%= @game.description %>
+      </p>
+    </div>
+  </div>
 
 <p>
   <strong>Available:</strong>
