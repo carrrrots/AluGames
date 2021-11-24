@@ -1,5 +1,13 @@
 $font-default: 'Roboto Mono', monospace;
 
+.navbar-container {
+  display: flex;
+}
+
+#name {
+  color: white;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #0f1722f6;
