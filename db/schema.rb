@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_192339) do
     t.string "name"
     t.string "category"
     t.integer "price"
-    t.string "number_of_players"
+    t.integer "number_of_players"
     t.text "description"
-    t.boolean "available", default: true
+    t.boolean "available"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
