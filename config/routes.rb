@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :games, shallow: true do
     resources :rents
   end
+
+  get "dashboard", to: "pages#dashboard", as: :dashboard
 end
