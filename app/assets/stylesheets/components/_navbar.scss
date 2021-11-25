@@ -1,5 +1,6 @@
-$font-default: 'Roboto Mono',
-monospace;
+$font-default: 'Roboto Mono', sans-serif;
+$font-button: 'Poppins', sans-serif;
+$font-header: 'Montserrat', sans-serif;
 
 .navbar-container {
   display: flex;
@@ -23,6 +24,7 @@ monospace;
 
 .navbar-lewagon .navbar-brand img {
   width: 3rem;
+  height: 3rem;
 }
 
 .login {

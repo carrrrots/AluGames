@@ -1,9 +1,6 @@
-<%= simple_form_for [ @game ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: Game::GAME_CATEGORIES %>
-  <%= f.input :price %>
-  <%= f.input :number_of_players %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class='container d-flex align-items-center m-auto'>
+  <div class="container-new p-3">
+    <h1>Upload your Game!</h1>
+    <%= render 'form', game: @game %>
+  </div>
+</div>
