@@ -2,6 +2,10 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "searchbar";
+@import "_cards";
+@import "form";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
 
 
 .card-container {
@@ -23,8 +27,6 @@
   padding: 0.1rem;
 }
 
-@import "searchbar";
-@import "_cards";
 
 .banner {
   background-size: cover ;
@@ -52,4 +54,3 @@
 }
 
 @import "carousel";
-

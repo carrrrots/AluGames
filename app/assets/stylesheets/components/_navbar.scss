@@ -1,4 +1,10 @@
-$font-default: 'Roboto Mono', monospace;
+$font-default: 'Roboto Mono',
+sans-serif;
+$font-button: 'Poppins',
+sans-serif, 300;
+$font-header: 'Montserrat',
+sans-serif;
+
 
 .navbar-container {
   display: flex;
