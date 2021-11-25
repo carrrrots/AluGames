@@ -1,10 +1,6 @@
-$font-default: 'Roboto Mono',
-sans-serif;
-$font-button: 'Poppins',
-sans-serif, 300;
-$font-header: 'Montserrat',
-sans-serif;
-
+$font-default: 'Roboto Mono', sans-serif;
+$font-button: 'Poppins', sans-serif;
+$font-header: 'Montserrat', sans-serif;
 
 .navbar-container {
   display: flex;
@@ -12,12 +8,13 @@ sans-serif;
 
 #name {
   color: white;
+  margin-top: 0.6rem;
 }
 
 .navbar-lewagon {
   justify-content: space-between;
   background: #0f1722f6;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   height: 50px;
 }
 
@@ -26,14 +23,16 @@ sans-serif;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 3rem;
+  height: 3rem;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.login {
   background: #E63946;
   color: white;
   font-family: $font-default;
-  font-weight: bold;
-  height: 35px;
-  border-radius: 20%;
+}
+
+.nav-link-btn {
+color: white !important;
 }
