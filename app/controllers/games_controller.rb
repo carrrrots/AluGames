@@ -5,6 +5,10 @@ class GamesController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @games = Game.where(sql_query, query: "%#{params[:query]}%")
+
+    elsif params[:category].present?
+      @games = Game.where(category: params[:category])
+
     else
       @games = Game.all
     end
