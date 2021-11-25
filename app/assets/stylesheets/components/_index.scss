@@ -6,6 +6,8 @@
 @import "_cards";
 @import "carousel";
 @import "showgames";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
+
 
 body {
   background-color: #F1FAEE;
@@ -64,6 +66,7 @@ body {
 
 .index-navbar {
   margin-top: 7rem;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .btn-show {
@@ -72,4 +75,23 @@ body {
   &:hover{
     background: #E63946;
   }
+}
+.dropdown-category {
+  font-family: $font-button;
+}
+
+.group-active-shadow {
+  background-color: #00000000;
+  &:hover {
+    box-shadow: 0 0 10rem rgba(33, 33, 33, .2);
+  }
+}
+
+#search-bar {
+ border-radius: 0 1rem 1rem 0;
+}
+
+#basic-addon1{
+  border-radius: 1rem 0 0 1rem;
+  background-color: white;
 }
