@@ -19,10 +19,19 @@
         </p>
         <p class="card-text text-break text-start">Description: <%= @game.description %></p>
         <div class="btns d-flex justify-content-center">
-          <button type="button" class="btn btn-basic btn-link-show mr-4" data-toggle="modal" data-target="#exampleModal"> Rent</button>
-          <p class="btn btn-basic"><%= link_to 'Edit', edit_game_path(@game), class: "btn-link-show" %></p>
-          <p class="btn btn-basic mx-4"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
-          <p class="btn btn-destroy"><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link-show" %></p>
+          <% if user_signed_in? && @game.user != current_user%>
+              <button type="button" class="btn btn-basic btn-link-show " data-toggle="modal" data-target="#exampleModal"> Rent</button>
+              <p class="btn btn-basic mx-4"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+            <%elsif%>
+              <% if @game.user == current_user %>
+                <p class="btn btn-basic "><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+                <p class="btn btn-basic mx-4"><%= link_to 'Edit', edit_game_path(@game), class: "btn-link-show" %></p>
+                <p class="btn btn-destroy"><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link-show" %></p>
+              <%end%>
+            <%else%>
+              <button type="button" class="btn btn-basic btn-link-show mr-4" data-toggle="modal" data-target="#exampleModal"> Rent</button>
+              <p class="btn btn-basic "><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+            <%end%>
         </div>
         <p class="card-text-hour small text-muted mt-4">Last updated <%= @game.updated_at %></small></p>
     </div>
@@ -40,13 +49,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [ @game, @rent ] do |f| %>
-          <%=f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}%>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-destroy" data-dismiss="modal">Cancel</button>
-          <%= f.submit "Rent", class: "btn btn-basic", notice: { confirm: 'GAME RENTED' } %>
-        <% end %>
+          <% if current_user %>
+          <%= simple_form_for [ @game, @rent ] do |f| %>
+            <%=f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}%>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-destroy" data-dismiss="modal">Cancel</button>
+          <%= f.submit "Rent", class: "btn btn-basic"%>
+          <% end %>
+        <%else%>
+          <p class="warning-msg"><i class="fas fa-exclamation-triangle fa-blink"></i> You must login to rent this game!</p>
+        <%end%>
       </div>
       </div>
     </div>

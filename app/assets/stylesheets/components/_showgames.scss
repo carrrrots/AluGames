@@ -58,3 +58,24 @@
   font-size: 3rem;
   text-shadow: 1px 1px 7px#457b9d;
 }
+.modal-body .warning-msg {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  color: #E63946;
+  &:hover{
+    color: rgba(255, 136, 0, 0.909);
+  }
+}
+ @keyframes fa-blink {
+     0% { opacity: 1; }
+     50% { opacity: 0.5; }
+     100% { opacity: 0; }
+ }
+.fa-blink {
+   -webkit-animation: fa-blink .75s linear infinite;
+   -moz-animation: fa-blink .75s linear infinite;
+   -ms-animation: fa-blink .75s linear infinite;
+   -o-animation: fa-blink .75s linear infinite;
+   animation: fa-blink .75s linear infinite;
+}

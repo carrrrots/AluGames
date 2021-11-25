@@ -13,9 +13,9 @@ class RentsController < ApplicationController
     @rent.game = @game
     @rent.user = current_user
     if @rent.save
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: "Game rented!"
     else
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: "Couldn't rent this game"
     end
   end
 

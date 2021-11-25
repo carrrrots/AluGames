@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 
 const initFlatpickr = () => {
-  flatpickr(".datepicker", {});
+  flatpickr(".datepicker", { mode: "range"});
 }
 
 export { initFlatpickr };
