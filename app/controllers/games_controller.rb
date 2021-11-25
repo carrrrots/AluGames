@@ -2,7 +2,16 @@ class GamesController < ApplicationController
   before_action :set_game, only: %i[show edit update destroy]
 
   def index
-    @games = Game.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @games = Game.where(sql_query, query: "%#{params[:query]}%")
+
+    elsif params[:category].present?
+      @games = Game.where(category: params[:category])
+
+    else
+      @games = Game.all
+    end
   end
 
   def show
@@ -26,11 +35,10 @@ class GamesController < ApplicationController
 
   def destroy
     @game.destroy
-     redirect_to games_path
+    redirect_to games_path
   end
 
   def edit;  end
-
 
   def update
     if @game.update(game_params)
@@ -39,7 +47,6 @@ class GamesController < ApplicationController
       render :edit
     end
   end
-
 
   private
 

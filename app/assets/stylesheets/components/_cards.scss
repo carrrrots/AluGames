@@ -1,19 +1,18 @@
 .card-container {
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.card {
+.card-home {
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 9px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.08);
 }
 
-.card-img-top {
+.card-img-home {
   margin-top: 20px;
   width: 15rem;
 }
