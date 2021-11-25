@@ -4,9 +4,12 @@
 @import "navbar";
 @import "searchbar";
 @import "_cards";
+@import "form";
 @import "carousel";
 @import "showgames";
 @import "footer";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
+
 
 body {
   background-color: #F1FAEE;
@@ -65,12 +68,80 @@ body {
 
 .index-navbar {
   margin-top: 7rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.btn-menu {
+  font-family: $font-button;
+  font-weight: 500;
 }
 
 .btn-show {
-  background: #A8DADC;
+  background: #457B9D;
   margin-bottom: -0.2rem;
   &:hover{
     background: #E63946;
+  }
+}
+
+.form-login {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
+.dropdown-category {
+  color: rgb(80, 80, 80) !important;
+  font-weight: 300;
+}
+
+.group-active-shadow {
+  background-color: #00000000;
+  &:hover {
+    box-shadow: 0 0 10rem rgba(33, 33, 33, .2);
+  }
+}
+
+#search-bar {
+ border-radius: 0 1rem 1rem 0;
+}
+
+#basic-addon1{
+  border-radius: 1rem 0 0 1rem;
+  background-color: white;
+}
+
+#btn-rent {
+  background-color: #1D3557;
+  color: white;
+    &:hover {
+      background: #E63946;
+    }
+}
+
+.form-buggado-demais {
+  width: 90%;
+}
+
+.hover-me {
+  &:hover {
+    background: #f3727d;
+  }
+}
+
+.hover-me2 {
+  &:hover {
+    background: #293a52f6;
   }
 }

@@ -22,9 +22,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#devise gem
-gem 'devise'
-
 #simple form
 gem 'simple_form'
 
@@ -34,7 +31,8 @@ gem 'simple_form'
 #devise gem
 gem 'devise'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'pg_search', '~> 2.3.0'
+
 gem 'cloudinary', '~> 1.16.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -42,7 +40,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
-gem 'simple_form'
+
 
 group :development, :test do
   gem 'pry-byebug'
