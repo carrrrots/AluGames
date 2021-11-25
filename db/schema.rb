@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_192016) do
+ActiveRecord::Schema.define(version: 2021_11_25_193811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_192016) do
     t.string "name"
     t.string "category"
     t.decimal "price"
-    t.string "number_of_players"
+    t.integer "number_of_players"
     t.text "description"
     t.boolean "available", default: true
     t.bigint "user_id", null: false
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2021_11_25_192016) do
 
   create_table "rents", force: :cascade do |t|
     t.date "start_date"
-    t.date "end_date"
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
