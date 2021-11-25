@@ -110,3 +110,19 @@ body {
       background: #E63946;
     }
 }
+
+.form-buggado-demais {
+  width: 90%;
+}
+
+.hover-me {
+  &:hover {
+    background: #f3727d;
+  }
+}
+
+.hover-me2 {
+  &:hover {
+    background: #293a52f6;
+  }
+}

@@ -1,9 +1,10 @@
 <div class="d-flex navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top p-5 align-items-center">
- <div class="navbar-container"> <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://i.imgur.com/yJb2gx3.png" %>
-  <% end %>
+ <div class="navbar-container "> <%= link_to root_path, class: "navbar-brand d-flex" do %>
 
-  <h2 id='name'>AluGames</h2>
+    <%= image_tag "https://i.imgur.com/yJb2gx3.png", class: "img-fluid" %>
+
+    <h2 id='name' class="ml-3">AluGames</h2>
+  <% end %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,9 +22,9 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <button type="button" class="btn text-decoration-none text-white">About</button>   <!--TROCAR COR PARA BRANCO-->
-          <button type="button" class="btn login rounded-pill px-3"><%= link_to "Login", new_user_session_path, class: "nav-link nav-link-btn" %></button>
+        <li class="nav-item d-flex">
+          <%= link_to "More Games", games_path, class: "nav-link nav-link-btn btn-menu hover-me2 rounded-pill mr-2" %>
+          <%= link_to "Login", new_user_session_path, class: "btn login rounded-pill px-3 hover-me nav-link nav-link-btn hover-me" %>
         </li>
       <% end %>
     </ul>

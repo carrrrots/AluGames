@@ -1,73 +1,77 @@
   <tbody>
-  <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-lg navbar-light index-navbar row">
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <div class="col-2">
-					<ul class="navbar-nav w-100 d-flex justify-content-end">
-						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle  dropdown-category btn bg-light btn-menu mr-2 rounded-pill shadow active" id="navbarDropdownMenuLink" data-toggle="dropdown"><i class="fa fa-align-justify"></i> Categories</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <%= link_to "All", games_path, class: "dropdown-item" %>
-                 <% Game::GAME_CATEGORIES.each do |category| %>
-                  <%= link_to category, games_path(category: category), class: "dropdown-item" %>
-                 <% end %>
-							</div>
-						</li>
-					</ul>
-          </div>
-          <div class="col rounded-pill">
-            <form class="form-inline">
-              <div class="input-group w-100 group-active-shadow">
-                <div class="input-group-prepend">
-                  <span class="input-group-text shadow" id="basic-addon1"><i class="fas fa-search"></i></span>
-                </div>
-                  <%= form_tag games_path, method: :get do %>
-                  <%= text_field_tag :query,
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-light index-navbar row">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="col-2">
+                <ul class="navbar-nav w-100 d-flex justify-content-end">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  dropdown-category btn bg-light btn-menu mr-2 rounded-pill shadow active"
+                      id="navbarDropdownMenuLink" data-toggle="dropdown"><i class="fa fa-align-justify"></i>
+                      Categories</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <%= link_to "All", games_path, class: "dropdown-item" %>
+                      <% Game::GAME_CATEGORIES.each do |category| %>
+                      <%= link_to category, games_path(category: category), class: "dropdown-item" %>
+                      <% end %>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col rounded-pill">
+                <form class="form-inline">
+                  <div class="input-group w-100 group-active-shadow">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text shadow" id="basic-addon1"><i class="fas fa-search"></i></span>
+                    </div>
+                    <%= form_tag games_path, method: :get do %>
+                    <%= text_field_tag :query,
                     params[:query],
                     class: "form-control shadow",
                     id: "search-bar",
                     placeholder: "What to play?"
                   %>
-                  <% submit_tag %>
-                <% end %>
+                    <% submit_tag %>
+                    <% end %>
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
-          <div class="col-3">
-					<ul class="navbar-nav ml-md-auto mr-5">
-						<li class="nav-item">
-							 <a><%= link_to 'Rent your Game!', new_game_path, class: "btn btn-menu d-flex justify-content-center rounded-pill mx-2 shadow", id: "btn-rent" %></a>
-						</li>
-            <li class="nav-item">
-							 <a><%= link_to 'Orders', games_path, class: "btn btn-secondary d-flex btn-menu justify-content-center rounded-pill mx-2 shadow" %></a>
-						</li>
-					</ul>
-          </div>
-				</div>
-			</nav>
-		</div>
-	</div>
-</div>
-<div class="card-container1">
-<% @games.each do |game| %>
-<div class="card m-4" style="width: 18rem; height:30%">
-  <%if game.photo.present? %>
-  <%= cl_image_tag game.photo.key, class: "card-img-top default-img", crop: :fill %>
-  <% else %>
-  <%= image_tag 'game.jpg', class: "card-img-top default-img"%>
-  <% end%>
-  <div class="card-body shadow">
-    <h5 class="card-title"><%= game.name %></h5>
-    <p class="card-category"><%= game.category %></p>
-    <p class="card-description"><%= game.description %></p>
-    <div class="d-flex justify-content-between">
-    <p class="card-price">R$<%= game.price %>,00</p>
-    <p class="card-players">Jogadores: <%= game.number_of_players %></p>
+              <div class="col-3">
+                <ul class="navbar-nav ml-md-auto mr-5">
+                  <li class="nav-item">
+                    <a><%= link_to 'Offer your Game!', new_game_path, class: "btn btn-menu d-flex justify-content-center rounded-pill mx-2 shadow", id: "btn-rent" %></a>
+                  </li>
+                  <li class="nav-item">
+                    <a><%= link_to 'Orders', games_path, class: "btn btn-secondary d-flex btn-menu justify-content-center rounded-pill mx-2 shadow" %></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
     </div>
-    <p><%= link_to 'Show', game, class: "btn d-flex justify-content-center mx-5 mt-2 rounded-pill btn-show link-btn btn-menu shadow" %></p>
-  </div>
-</div>
-<% end %>
-</div>
+    <div class="card-container1">
+      <% @games.each do |game| %>
+      <div class="card m-4" style="width: 18rem; height:30%">
+        <%if game.photo.present? %>
+        <%= cl_image_tag game.photo.key, class: "card-img-top default-img", crop: :fill %>
+        <% else %>
+        <%= image_tag 'game.jpg', class: "card-img-top default-img"%>
+        <% end%>
+        <div class="card-body shadow">
+          <h5 class="card-title"><%= game.name %></h5>
+          <p class="card-category"><%= game.category %></p>
+          <p class="card-description"><%= game.description %></p>
+          <div class="d-flex justify-content-between">
+            <p class="card-price">R$<%= game.price %>,00</p>
+            <p class="card-players">Jogadores: <%= game.number_of_players %></p>
+          </div>
+          <p>
+            <%= link_to 'Show', game, class: "btn d-flex justify-content-center mx-5 mt-2 rounded-pill btn-show link-btn btn-menu shadow" %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
