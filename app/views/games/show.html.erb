@@ -1,41 +1,36 @@
-<div class="show-container-box d-flex">
-
-  <div class="row no-gutters">
-    <div class="col-md-4 ">
+<div class="show-container-box">
+  <div class="both-content"=>
+    <div class="fundo-img">
       <%if @game.photo.present? %>
       <%= cl_image_tag @game.photo.key, class: "card-img-top default-img-show", crop: :fill %>
       <% else %>
       <%= image_tag 'game.jpg', class: "card-img-top default-img-show"%>
       <% end%>
     </div>
-    <div class=" card col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-</div>
-</div>
-<div class="container show-container">
-
-    <div class="infos">
-      <div class="description">
-        <p class="text-break">
-          <strong>Description:</strong>
-          <%= @game.description %>
+    <div class="card-text-content mx-3">
+        <h5 class="card-title text-center"><%=@game.name.upcase%></h5>
+        <p class="card-price ">Price: R$<strong><%= @game.price %>.00</strong> a day</p>
+        <p class="card-available align-self-start">
+          <%if @game.available %>
+            <p>Available to rent <i class="far fa-laugh-beam" style="color:green"></i></p>
+          <%else%>
+            <p>Not available to rent <i class="far fa-frown" style="color:red"></i></p>
+          <%end%>
         </p>
-      </div>
-      <div class="price">
-        <p><strong>Price:</strong> R$ <%=@game.price%>.00</p>
-      </div>
+        <p class="card-text text-break text-start">Description: <%= @game.description %></p>
+        <div class="btns d-flex justify-content-center">
+          <p class="btn btn-basic"><%= link_to 'Edit', edit_game_path(@game), class: "btn-link-show" %></p>
+          <p class="btn btn-basic mx-4"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+          <p class="btn btn-destroy"><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link-show" %></p>
+        </div>
+        <p class="card-text-hour small text-muted mt-4">Last updated <%= @game.updated_at %></small></p>
     </div>
+  </div>
 </div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+  Rent
 </button>
 
 <!-- Modal -->
@@ -61,22 +56,3 @@
     </div>
   </div>
 </div>
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @game.available ? 'yes' : 'no' %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %>
-<%= link_to 'Back', games_path %>
-
-<td><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
