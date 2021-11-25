@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 80vh;
 }
 
 .both-content{
@@ -11,8 +12,9 @@
 }
 
 .default-img-show {
-  width: 700px;
-  height: 500px;
+  margin-left: 15px;
+  width: 40rem;
+  height: auto;
 }
 
 .card-text-content{
@@ -21,10 +23,11 @@
   justify-content: space-between;
   background-color: white;
   width: 90%;
-  height: 500px;
+  height: auto;
   padding: 10px;
   box-shadow: 0 0 0.5em black;
   border-radius: 15px;
+  font-family: monospace
 }
 .btn-link-show {
   text-decoration: none !important;
@@ -44,9 +47,14 @@
   }
 }
 .btn-basic {
-  background: #A8DADC;
+  background: #457b9d;
   margin-bottom: -0.2rem;
   &:hover{
-    background:#E63946;
+    background:#A8DADC;
   }
+}
+.card-title {
+  color: #1D3557;
+  font-size: 3rem;
+  text-shadow: 1px 1px 7px#457b9d;
 }
