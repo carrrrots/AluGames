@@ -1,0 +1,73 @@
+.collapse-container {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 300px;
+  text-align: center;
+}
+
+h1 {
+  font-family: $font-header;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+.card {
+  margin: auto;
+  max-width: 700px;
+  // border-radius: 20px;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #a8dadc46;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 20px;
+}
+
+.btn-collapse {
+  color: rgb(92, 92, 92);
+  font-family: $font-default;
+  font-size: 18px;
+    .hover {
+      color: red;
+    }
+}
+
+// .card-img-game {
+//   width: 50px;
+// }
+
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
