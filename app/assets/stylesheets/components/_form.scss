@@ -18,6 +18,7 @@ h1 {
 .form-inputs {
   color: rgb(92, 92, 92);
   font-family: $font-default;
+  align-items: flex-start;
   font-size: 18px;
 }
 
@@ -43,4 +44,8 @@ h1 {
   background: white;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+.form-container {
+  margin-top: 7rem;
 }

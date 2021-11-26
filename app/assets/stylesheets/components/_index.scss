@@ -10,9 +10,24 @@
 @import "footer";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
 
+html,
+body {
+  height: 100%;
+}
 
 body {
   background-color: #F1FAEE;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 .card-container1 {
@@ -144,4 +159,8 @@ body {
   &:hover {
     background: #293a52f6;
   }
+}
+
+.card {
+ height: auto !important;
 }
