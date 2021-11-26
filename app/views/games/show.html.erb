@@ -9,7 +9,7 @@
     </div>
     <div class="card-text-content mx-3 ">
         <h5 class="card-title text-center"><%=@game.name.upcase%></h5>
-        <p class="card-price ">Price: R$<strong><%= @game.price %>.00</strong> a day</p>
+        <p class="card-price ">Price: R$<strong><%= @game.price %></strong> a day</p>
         <p class="card-available align-self-start">
           <%if @game.available%>
             <p>Available to rent <i class="far fa-laugh-beam" style="color:green"></i></p>

@@ -11,8 +11,8 @@
     <%= f.input :description %>
     <%= f.input :photo, as: :file, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
   </div>
-  <div class='d-flex justify-content-between mt-4' >
-    <%= f.submit "Back", class: "btn btn-new rounded-pill " %>
-    <%= f.submit "Create", class: "btn btn-new rounded-pill" %>
+  <div class='d-flex justify-content-center' >
+    <%= link_to "Back", game, class: "btn btn-new rounded-pill mx-5 mb-3" %>
+    <%= f.submit class: "btn btn-new rounded-pill mb-3" %>
   </div>
 <% end %>
