@@ -8,7 +8,7 @@
 @import "carousel";
 @import "showgames";
 @import "footer";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap');
 
 html,
 body {
@@ -43,6 +43,7 @@ body {
   background-position: center;
   padding: 150px 0;
   margin-top: 2px;
+  height: 40%;
 }
 
 .banner h1 {
@@ -139,6 +140,7 @@ body {
 
 #btn-rent {
   background-color: #1D3557;
+  width: 11rem;
   color: white;
     &:hover {
       background: #E63946;
@@ -159,8 +161,4 @@ body {
   &:hover {
     background: #293a52f6;
   }
-}
-
-.card {
- height: auto !important;
 }

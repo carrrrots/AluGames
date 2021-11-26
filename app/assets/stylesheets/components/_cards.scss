@@ -6,6 +6,10 @@
   flex-wrap: wrap;
 }
 
+.card {
+  height: 34rem !important;
+}
+
 .card-home {
   display: flex;
   align-items: center;
@@ -15,4 +19,40 @@
 .card-img-home {
   margin-top: 20px;
   width: 15rem;
+}
+
+.btn-static-category {
+  font-size: 0.7rem;
+  padding: 0 0.75rem;
+  font-weight: 900;
+  height: 1rem;
+  padding-bottom: 1.1rem;
+  width: auto;
+  color: white;
+  background-color: #E63946;
+    &:hover {
+      color: white;
+    }
+}
+
+.font-default {
+  font-family: $font-default;
+}
+
+.font-header {
+  font-family: $font-header;
+}
+
+.font-button {
+  font-family: $font-button;
+}
+
+.num-box {
+  color: rgb(124, 124, 124);
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.card-description {
+  height: 4rem;
 }
