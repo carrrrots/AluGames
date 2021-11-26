@@ -49,7 +49,7 @@
               <div class="card-body shadow">
                 <h5 class="card-title"><%= game.name %></h5>
                 <p class="card-category"><%= game.category %></p>
-                <p class="card-description"><%= game.description %></p>
+                <p class="card-description"><%= game.description.truncate(50, separator: ' ') %></p>
                 <div class="d-flex justify-content-between">
                   <p class="card-price">R$<%= game.price %>,00</p>
                   <p class="card-players">Jogadores: <%= game.number_of_players %></p>
