@@ -61,10 +61,11 @@
         <%= image_tag 'game.jpg', class: "card-img-top default-img"%>
         <% end%>
         <div class="card-body shadow">
-          <h5 class="card-title"><%= game.name %></h5>
-          <p class="card-category"><%= game.category %></p>
+          <h5 class="card-title "><%= game.name %></h5>
+          <p class="card-category font-button btn disabled btn-static-category rounded-pill"><%= game.category %></p>
           <p class="card-description"><%= game.description.truncate(50, separator: ' ') %></p>
-          <div class="d-flex justify-content-between">
+          <hr>
+          <div class="d-flex justify-content-between num-box font-default">
             <p class="card-price">R$<%= game.price %>,00</p>
             <p class="card-players">Jogadores: <%= game.number_of_players %></p>
           </div>

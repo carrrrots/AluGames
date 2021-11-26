@@ -54,9 +54,10 @@
   }
 }
 .card-title {
-  color: #1D3557;
-  font-size: 3rem;
-  text-shadow: 1px 1px 7px#457b9d;
+  font-family: $font-header;
+  font-size: 700;
+  color: #303030 ;
+  align-items: center;
 }
 .modal-body .warning-msg {
   font-family: monospace;
