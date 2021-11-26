@@ -20,17 +20,17 @@
         <p class="card-text text-break text-start">Description: <%= @game.description %></p>
         <div class="btns d-flex justify-content-center">
           <% if user_signed_in? && @game.user != current_user%>
-              <button type="button" class="btn btn-basic btn-link-show " data-toggle="modal" data-target="#exampleModal"> Rent</button>
-              <p class="btn btn-basic mx-4"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+              <button type="button" class="btn btn-basic btn-link-show rounded-pill " data-toggle="modal" data-target="#exampleModal"> Rent</button>
+              <p class="btn btn-basic mx-4 rounded-pill"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
             <%elsif%>
               <% if @game.user == current_user %>
-                <p class="btn btn-basic "><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
-                <p class="btn btn-basic mx-4"><%= link_to 'Edit', edit_game_path(@game), class: "btn-link-show" %></p>
-                <p class="btn btn-destroy"><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link-show" %></p>
+                <p class="btn btn-basic rounded-pill "><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+                <p class="btn btn-basic rounded-pill mx-4"><%= link_to 'Edit', edit_game_path(@game), class: "btn-link-show" %></p>
+                <p class="btn btn-destroy rounded-pill"><%= link_to 'Destroy', @game, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link-show" %></p>
               <%end%>
             <%else%>
-              <button type="button" class="btn btn-basic btn-link-show mr-4" data-toggle="modal" data-target="#exampleModal"> Rent</button>
-              <p class="btn btn-basic "><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
+              <button type="button" class="btn btn-basic btn-link-show rounded-pill mr-4" data-toggle="modal" data-target="#exampleModal"> Rent</button>
+              <p class="btn btn-basic rounded-pill"><%= link_to 'Back', games_path, class: "btn-link-show" %></p>
             <%end%>
         </div>
         <p class="card-text-hour small text-muted mt-4">Last updated <%= @game.updated_at %></small></p>
