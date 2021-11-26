@@ -16,9 +16,7 @@
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body"> <!--FAZER LINK JOGOS CRIADOS PELO USER-->
           <% current_user.games.each do |game| %>
-            <p>
             <%= link_to game.name, game, class: "btn d-flex justify-content-center mx-5 mt-2 rounded-pill btn-show link-btn btn-menu shadow" %>
-            </p>
           <%end%>
         </div>
       </div>

@@ -48,9 +48,10 @@
               <% end%>
               <div class="card-body shadow">
                 <h5 class="card-title"><%= game.name %></h5>
-                <p class="card-category"><%= game.category %></p>
-                <p class="card-description"><%= game.description %></p>
-                <div class="d-flex justify-content-between">
+                <p class="card-category font-button btn disabled btn-static-category rounded-pill"><%= game.category %></p>
+                <p class="card-description font-default"><%= game.description.truncate(50, separator: ' ') %></p>
+                <hr>
+                <div class="d-flex justify-content-between font-default num-box">
                   <p class="card-price">R$<%= game.price %>,00</p>
                   <p class="card-players">Jogadores: <%= game.number_of_players %></p>
                 </div>
@@ -73,9 +74,10 @@
               <% end%>
               <div class="card-body shadow">
                 <h5 class="card-title"><%= game.name %></h5>
-                <p class="card-category"><%= game.category %></p>
-                <p class="card-description"><%= game.description %></p>
-                <div class="d-flex justify-content-between">
+                <p class="card-category font-button btn disabled btn-static-category rounded-pill"><%= game.category %></p>
+                <p class="card-description font-default"><%= game.description.truncate(50, separator: ' ') %></p>
+                <hr>
+                <div class="d-flex justify-content-between font-default num-box">
                   <p class="card-price">R$<%= game.price %>,00</p>
                   <p class="card-players">Jogadores: <%= game.number_of_players %></p>
                 </div>
